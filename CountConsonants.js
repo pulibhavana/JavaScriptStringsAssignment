@@ -1,6 +1,6 @@
 function main()
 {
-    string = 'hello'
+    string = '123ab'
     result = countConsonants(string)
     console.log("The no of consonants present is:" + result)
 }
@@ -22,10 +22,16 @@ function isConsonant(character)
     char = character.toLowerCase()
     for(var index = 0;index < vowels.length;index++)
     {
-        if(char == vowels[index])
+        if(char == vowels[index] || checkIfNumber(char))
             return false
     }
     return true
+}
+
+function checkIfNumber(char)
+{
+    var character = parseInt(char)
+    return (!isNaN(character))
 }
 
 main()
