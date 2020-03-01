@@ -1,17 +1,15 @@
-function main()
+function getreverse(accumulator,currentvalue,index,array)
 {
-    string = 'helloworld'
-    result = stringReversal(string)
-    console.log(result)
+
+    return accumulator.concat(currentvalue);
 }
 
-function stringReversal(string)
+function reverse(str)
 {
-    len = string.length
-    reversedstring = ''
-    for(var endindex = len - 1;endindex >= 0;endindex -- )
-        reversedstring += string[endindex]
-    return reversedstring
+    var characters = str.split("");
+    const result = characters.reduceRight(getreverse);
+    return result;
 }
+console.log(reverse('abc'));
 
-main()
+module.exports = {reverse};
