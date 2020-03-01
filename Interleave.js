@@ -1,19 +1,25 @@
-function interleave(string1 , string2)
+function interleave(element)
 {
-    let newstring = '';
-    for(let index = 0;index < string1.length;index++)
-    {
-        newstring += string1[index];
-        if(index !== string1.length - 1)
-            newstring += string2;
-    }
-    return newstring;
+    let accumulator = '';
+    return accumulator += element.concat(this);
 }
 
 function main()
 {
-    let result = interleave('abc','-');
-    console.log(result);
+    var str1 = 'abc',str2='-'
+    characters = convertTolist(str1);
+    result = characters.map(interleave,str2);
+    console.log(convertToStr(result))
+}
+
+function convertTolist(str)
+{
+    return str.split('');
+}
+
+function convertToStr(str)
+{
+    return result.join('');
 }
 
 main();
