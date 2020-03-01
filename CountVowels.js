@@ -1,19 +1,13 @@
 function main()
 {
-    string = 'hello'
-    result = countVowels(string)
-    console.log("The no of vowels present is:" + result)
+    console.log("The no of vowels present is:" + countVowels('helloo'));
 }
 
 function countVowels(string)
 {
-    var vowelcount = 0
-    for(var index =0;index < string.length;index++)
-    {
-        if(isVowel(string[index]))
-            vowelcount = vowelcount+1
-    }
-    return vowelcount
+    let characters = string.split('');
+    return characters.filter(isVowel).length;
+
 }
 
 function isVowel(character)
@@ -28,4 +22,4 @@ function isVowel(character)
     return false
 }
 
-main()
+main();
