@@ -1,19 +1,23 @@
 function main()
 {
-    result = camelCase(["hello","world"])
-    console.log(result)
+    console.log(camelCase("hello world"));
+
 }
 
-function camelCase(arguments)
+function getTitleCase(word)
 {
-    newstring = arguments[0].toLowerCase()
-    for(var index = 1;index < arguments.length;index++) {
-        string = arguments[index]
-        word = string[0].toUpperCase()
-        newword = word.concat(string.slice(1,string.length))
-        newstring += newword
-    }
-    return newstring
+    return word[0].toUpperCase()+word.slice(1).toLowerCase();
 }
 
-main()
+function camelCase(string)
+{
+    words = string.split(" ");
+    return words.slice(1).reduce(getCamelCase,words[0].toLowerCase());
+}
+
+function getCamelCase(accumulator,currentValue)
+{
+    return accumulator.concat(getTitleCase(currentValue))
+}
+
+main();
