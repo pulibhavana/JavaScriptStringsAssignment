@@ -1,30 +1,23 @@
 function main()
 {
-    console.log("The no of consonants present is:" + countConsonants('123abc'));
+    console.log("The no of consonants present is:" + countConsonants('123ABc'));
 }
 
 function countConsonants(string)
 {
-    characters = string.split('');
+    characters = string.toLowerCase().split('');
     return (characters.filter(isConsonant)).length;
 }
 
 function isConsonant(character)
 {
-    var vowels = ['a','e','i','o','u'];
-    var char = character.toLowerCase()
-    for(var index = 0;index < vowels.length;index++)
-    {
-        if(char === vowels[index] || checkIfChar(char))
-            return false
-    }
-    return true
+    var vowels = 'aeiou'
+    return (checkIfChar(character) && !(vowels.includes(character)));
 }
 
 function checkIfChar(char)
 {
-    return char.toLowerCase() == char.toUpperCase();
+    return char.toLowerCase() != char.toUpperCase();
 }
 
 main();
-//exports = {countConsonants}
