@@ -1,21 +1,11 @@
 function main()
 {
-    string = "a,b,c"
-    result = countUniqueLetters(string)
-    console.log(result)
+    console.log(['a','b','c','c'].filter(countUniqueLetters).length);
 }
 
-function countUniqueLetters(string)
+function countUniqueLetters(element,index,arr)
 {
-    word = string.toLowerCase()
-    var myset = new Set(word),count = 0
-    for(var item of myset)
-    {
-        if (item.toLowerCase() != item.toUpperCase())
-            count += 1
-
-    }
-    return count
+    return !(arr.slice(index+1).includes(element));
 }
 
-main()
+main();
