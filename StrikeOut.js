@@ -1,30 +1,22 @@
-function strikeout(string1, string2)
+function strikeout(string1,string2)
 {
-    var newstring = '',words = string1.split(' '),character = string2[0]
-    for(var index = 0;index < words.length;index++)
-    {
-        result = replace(words[index],character)
-        newstring += result + ' '
-    }
-    return newstring
+    return string1.split('').map(replaceall,string2[0]).join('')
 }
 
-function replace(str, character)
+function replaceall(element,index,str)
 {
-    var newstring = ''
-    for(var index = 0;index < str.length;index++) {
-        if(str[index] == character)
-            newstring += '-'
-        else
-            newstring += str[index]
-    }
-    return newstring
+    var newstr = '';
+    if(element == this)
+        newstr += '-';
+    else
+        newstr += element;
+    return newstr;
+
 }
 
 function main()
 {
-    result = strikeout("hello world",'l')
-    console.log(result)
+    console.log(strikeout("hello world","l"))
 }
 
-main()
+main();
