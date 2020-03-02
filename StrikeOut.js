@@ -5,13 +5,7 @@ function strikeout(string1,string2)
 
 function replaceall(element,index,str)
 {
-    var newstr = '';
-    if(element == this)
-        newstr += '-';
-    else
-        newstr += element;
-    return newstr;
-
+    return element == this ?'-':element;
 }
 
 function main()
