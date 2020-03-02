@@ -1,17 +1,16 @@
 function reverseWordOrder(string)
 {
-    var words = string.split(' '), reversedstring = ''
-    for(var index = words.length - 1;index >= 0;index--)
-    {
-        reversedstring += words[index]+" "
-    }
-    return reversedstring
+    return string.split(' ').reduceRight(reverse);
+}
+
+function reverse(accumulator,currentValue)
+{
+    return accumulator +" " + currentValue;
 }
 
 function main()
 {
-    result = reverseWordOrder('how are you   dear')
-    console.log(result)
+    console.log(reverseWordOrder('  how are you  dear  '))
 }
 
-main()
+main();
