@@ -1,18 +1,12 @@
-function wordFrequency(string1, string2)
+function wordFrequency(element)
 {
-    var words = string1.split(' '), count = 0
-    for(var index = 0;index < words.length;index++)
-    {
-        if(string2 == words[index])
-            count = count + 1
-    }
-    return count
+    return element == this;
 }
 
 function main()
 {
-    result = wordFrequency("Hello world Hello","hello")
-    console.log(result)
+    result = ["hello","world","hello"].filter(wordFrequency, "hello")
+    console.log(result.length)
 }
 
-main()
+main();
