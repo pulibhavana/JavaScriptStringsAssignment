@@ -1,9 +1,7 @@
 let functions = require('./Reverse.js')
 function main()
 {
-    string = 'abba'
-    result = isPalindrome(string)
-    console.log(result)
+    console.log(isPalindrome('abba'));
 }
 
 function isPalindrome(string)
