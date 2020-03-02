@@ -1,9 +1,9 @@
 function main()
 {
-    console.log(['a','b','c','c'].filter(countUniqueLetters).length);
+    console.log(['a','b','c','c'].filter(isUniqueLetter).length);
 }
 
-function countUniqueLetters(element,index,arr)
+function isUniqueLetter(element,index,arr)
 {
     return !(arr.slice(index+1).includes(element));
 }
