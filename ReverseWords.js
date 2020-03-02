@@ -1,30 +1,18 @@
-
-function reverseWords(string)
+const functions = require('./Reverse.js')
+function getReverseWords(string)
 {
-    var words = string.split(' ') , newstring = ''
-    for(var item of words) {
-        reversedword = stringReversal(item)
-        newstring += reversedword+' '
-    }
-    return newstring
+    var words = string.split(' ');
+    return words.reduce(reverseWord);
+}
 
+function reverseWord(accumulator,currentvalue)
+{
+    return functions.reverse(accumulator) +" "+ functions.reverse(currentvalue);
 }
 
 function main()
 {
-    result = reverseWords('hello world')
-    console.log(result)
+    console.log(getReverseWords('hello world hello'));
 }
 
-function stringReversal(string)
-{
-    len = string.length
-    reversedstring = ''
-    for(var endindex = len - 1;endindex >= 0;endindex -- )
-        reversedstring += string[endindex]
-    return reversedstring
-}
-
-
-
-main()
+main();
