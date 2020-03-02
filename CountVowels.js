@@ -5,15 +5,12 @@ function main()
 
 function countVowels(string)
 {
-    var characters = string.split('');
-    return characters.filter(isVowel).length;
-
+    return string.split('').filter(isVowel).length;
 }
 
 function isVowel(character)
 {
-    var vowels = 'aeiou'
-    return vowels.includes(character);
+    return 'aeiou'.includes(character);
 }
 
 main();

@@ -1,7 +1,6 @@
 function main()
 {
     console.log(camelCase("hello world"));
-
 }
 
 function getTitleCase(word)

@@ -5,14 +5,12 @@ function main()
 
 function countConsonants(string)
 {
-    characters = string.toLowerCase().split('');
-    return (characters.filter(isConsonant)).length;
+    return (string.toLowerCase().split('').filter(isConsonant)).length;
 }
 
 function isConsonant(character)
 {
-    var vowels = 'aeiou'
-    return (checkIfChar(character) && !(vowels.includes(character)));
+    return (checkIfChar(character) && !('aeiou'.includes(character)));
 }
 
 function checkIfChar(char)
