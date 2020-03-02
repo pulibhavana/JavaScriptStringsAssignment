@@ -1,25 +1,10 @@
-function interleave(element)
+function interleave(str1,str2)
 {
-    let accumulator = '';
-    return accumulator += element.concat(this);
+    return str1.split('').join(str2);
 }
 
 function main()
 {
-    var str1 = 'abc',str2='-'
-    characters = convertTolist(str1);
-    result = characters.map(interleave,str2);
-    console.log(convertToStr(result))
+    console.log(interleave('abc','-'));
 }
-
-function convertTolist(str)
-{
-    return str.split('');
-}
-
-function convertToStr(str)
-{
-    return result.join('');
-}
-
 main();
